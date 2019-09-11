@@ -9,6 +9,6 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   getPosts(){
-    return this.httpClient.get(`https://www.reddit.com/r/soccer/top/.json?t=month&limit=10`);
+    return this.httpClient.get(`https://jsonplaceholder.typicode.com/posts`);
   }
 }

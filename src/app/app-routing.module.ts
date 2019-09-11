@@ -22,8 +22,7 @@ const routes: Routes = [
   { 
     path: 'listagem', 
     loadChildren: './listagem/listagem.module#ListagemPageModule' 
-  },
-  { path: 'listagemm', loadChildren: './listagemm/listagemm.module#ListagemmPageModule' }
+  }
 ];
 
 @NgModule({

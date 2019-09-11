@@ -22,19 +22,14 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'About',
-      url: '/about',
-      icon: 'help-circle-outline'
-    },
-    {
-      title: 'Listagem',
+      title: 'Listagem API',
       url: '/listagem',
       icon: 'list'
     },
     {
-      title: 'Listagemm',
-      url: '/listagemm',
-      icon: 'list'
+      title: 'About',
+      url: '/about',
+      icon: 'help-circle-outline'
     }
   ];
 

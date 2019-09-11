@@ -9,26 +9,17 @@
 
 <ion-content>
 
-	<ion-list>
-		<ion-item *ngFor="let item of itens">
-		  <h1>
-		  	{{item.titulo}}
-		  </h1>
-		  <p class="item-note" slot="end">
-		    {{item.descricao}}
-		  </p>
-		</ion-item>
-	</ion-list>
-
-	<ion-card *ngFor="let post of itens">
-		<ion-card-header>
-	      <ion-card-subtitle>{{item.titulo}}</ion-card-subtitle>
+    <ion-card *ngFor="let post of posts">
+	    <ion-img src="https://cdn.pixabay.com/photo/2015/10/07/12/17/post-976115_960_720.png"></ion-img>
+	    <ion-card-header>
+			<ion-card-subtitle>{{post.title}}</ion-card-subtitle>
 	    </ion-card-header>
 	    <ion-card-content>
-	      <p>
-	        {{item.descricao}}
-	      </p>
+			<p>
+			{{post.description}}
+			</p>
+			<ion-button ion-button fill="outline" href="https://www.google.com" large>Read full article</ion-button>
 	    </ion-card-content>
-	</ion-card>
+  </ion-card>
 
 </ion-content>
