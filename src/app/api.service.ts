@@ -8,7 +8,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPosts(){
-    return this.httpClient.get(`https://jsonplaceholder.typicode.com/posts`);
+  getPosts(page){
+    return this.httpClient.get(`https://reqres.in/api/users?page=${page}`);
   }
 }

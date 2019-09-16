@@ -9,15 +9,31 @@ import { ApiService } from '../api.service';
 export class ListagemPage implements OnInit {
   
   public posts;
+  public page;
+  public total_page;
 
   constructor(private apiService: ApiService) {
 
-    this.apiService.getPosts().subscribe((data)=>{
+    this.page = 1;
+
+    this.apiService.getPosts(this.page).subscribe((data)=>{
       console.log(data);
-      this.posts = data;
+      this.posts = data.data;
     });
 
   }
+
+  loadMoreData(event) {
+
+    this.page++;
+
+    this.apiService.getPosts(this.page).subscribe((data)=>{
+      this.posts = data.data;
+      event.target.complete();
+    });
+
+  }
+
 
   ngOnInit() {}
 
