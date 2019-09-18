@@ -8,28 +8,32 @@ import { ApiService } from '../api.service';
 })
 export class ListagemPage implements OnInit {
   
-  public posts;
-  public page;
-  public total_page;
+  public posts:any;
+  public page:any;
+  public total_page:any;
 
   constructor(private apiService: ApiService) {
 
     this.page = 1;
 
-    this.apiService.getPosts(this.page).subscribe((data)=>{
+    this.apiService.getPosts(this.page).subscribe((data:any)=>{
       console.log(data);
+      this.total_page = data.total_page;
       this.posts = data.data;
     });
 
   }
 
   loadMoreData(event) {
-
+    
     this.page++;
 
-    this.apiService.getPosts(this.page).subscribe((data)=>{
-      this.posts = data.data;
+    this.apiService.getPosts(this.page).subscribe((data:any)=>{
+      this.posts = this.posts.concat(data.data);
       event.target.complete();
+      if (this.total_page == this.page) {
+        event.target.disabled = true;
+      }
     });
 
   }
