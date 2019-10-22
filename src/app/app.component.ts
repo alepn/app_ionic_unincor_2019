@@ -27,6 +27,11 @@ export class AppComponent {
       icon: 'list'
     },
     {
+      title: 'Formulário API',
+      url: '/formulario',
+      icon: 'list'
+    },
+    {
       title: 'About',
       url: '/about',
       icon: 'help-circle-outline'

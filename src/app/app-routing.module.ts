@@ -22,6 +22,14 @@ const routes: Routes = [
   { 
     path: 'listagem', 
     loadChildren: './listagem/listagem.module#ListagemPageModule' 
+  },
+  { 
+    path: 'formulario', 
+    loadChildren: './formulario/formulario.module#FormularioPageModule' 
+  },
+  { 
+    path: 'modal', 
+    loadChildren: './modal/modal.module#ModalPageModule' 
   }
 ];
 
