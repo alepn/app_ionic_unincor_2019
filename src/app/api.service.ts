@@ -30,4 +30,21 @@ export class ApiService {
     
   }
 
+  sendPutRequest(id, postData) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        })
+    };
+
+    return this.httpClient.put(`https://reqres.in/api/users/${id}`, postData, httpOptions);
+    
+  }
+
+  sendDeleteRequest(id){
+    return this.httpClient.delete(`https://reqres.in/api/users/${id}`);
+  }
+
 }
